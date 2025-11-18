@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>KERR ITC REVIEWER</title>
+<title>Comprog & ICT — 100-Item Quiz (Blue Neon)</title>
 <style>
  :root{
-  --bg:#0a0f24; --card:#111827; --accent:#00eaff; --glow:0 0 14px #00dfff;
+  --bg:#0a0f24; --card:#111827; --accent:#00eaff; --glow:0 0 12px #00dfff;
   --text:#e8f6ff; --muted:#9fb6c6; --radius:10px;
  }
  body{background:var(--bg); color:var(--text); font-family:Segoe UI,Arial,sans-serif; margin:0; padding:28px;}
- .wrap{max-width:1200px; margin:0 auto; background:var(--card); padding:26px; border-radius:14px;
+ .wrap{max-width:1000px; margin:0 auto; background:var(--card); padding:24px; border-radius:12px;
        box-shadow:0 12px 40px rgba(0,0,0,.6); border:1px solid #1b2430;}
  h1{color:var(--accent); text-shadow:var(--glow); text-align:center; margin:0 0 8px;}
- .meta{color:var(--muted); text-align:center; margin-bottom:16px;}
+ .meta{color:var(--muted); text-align:center; margin-bottom:14px;}
  .q{background:#0f1722; padding:14px; border-radius:10px; margin-bottom:12px; border-left:4px solid var(--accent); transition:.12s;}
- .q:hover{transform:translateX(6px); box-shadow:0 12px 30px rgba(0,230,255,0.06);}
+ .q:hover{transform:translateX(6px); box-shadow:0 12px 30px rgba(0,230,255,0.05);}
  .q strong{display:block; margin-bottom:8px;}
  .choices label{display:block; cursor:pointer; padding:6px 0; color:var(--text);}
- input[type="radio"]{transform:scale(1.12); margin-right:8px; accent-color:var(--accent);}
+ input[type="radio"]{transform:scale(1.1); margin-right:8px; accent-color:var(--accent);}
  .controls{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; align-items:center;}
  button{background:var(--accent); color:#000; border:none; padding:10px 16px; border-radius:10px; cursor:pointer; box-shadow:var(--glow); font-weight:700;}
  button.secondary{background:#0b1220; color:var(--text); border:1px solid rgba(255,255,255,.04);}
@@ -30,16 +30,16 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>ITC REVIEWER KO TO BOY?</h1>
-    <p class="meta">SUPER DAMING ITEMS BOY PALDOO</p>
+    <h1>Comprog & ICT — 100-Item Reviewer</h1>
+    <p class="meta">Focused on core topics: IPS, Data/Info, Algorithms, SDLC, Flowcharts, Pseudocode, Control Structures, Loops, Arrays, HTML/CSS/JS. Submit locks answers; refresh to retake.</p>
 
     <form id="quiz"></form>
 
     <div class="controls">
-      <button id="submitBtn" type="button">Submit mo na</button>
-      <button id="showKeyBtn" type="button" class="secondary">Click for magic</button>
+      <button id="submitBtn" type="button">Submit Answers</button>
+      <button id="showKeyBtn" type="button" class="secondary">Show Answer Key</button>
       <div style="flex:1"></div>
-      <div class="small">NYANYANYANYANYANYA</div>
+      <div class="small">Copy to GitHub / VS Code. Refresh to retake the quiz.</div>
     </div>
 
     <div id="result" aria-live="polite"></div>
@@ -47,230 +47,252 @@
   </div>
 
 <script>
+// ===== QUESTIONS: 100 items =====
 const questions = [
-{q:"Which best defines a computer?", choices:["A programmable electronic device that processes data","A storage device only","A type of printer","A smartphone exclusively"], correct:0},
-{q:"DATA is best described as:", choices:["Raw, unorganized facts","Processed information","An output report","A storage medium"], correct:0},
-{q:"INFORMATION differs from data because it is:", choices:["Processed and meaningful","Raw and unprocessed","Always numerical","Only images"], correct:0},
-{q:"Which is NOT a component of the Information Processing System (IPS)?", choices:["Hardware","Software","Peopleware","Paintware"], correct:3},
-{q:"Which is an example of hardware?", choices:["CPU","Operating System","Application program","Algorithm"], correct:0},
-{q:"Software is:", choices:["Instructions that tell hardware what to do","A type of CPU","Physical memory","A networking cable"], correct:0},
-{q:"Peopleware refers to:", choices:["Users and IT personnel","A software license","A type of hardware","A database format"], correct:0},
-{q:"Which is an IPS function?", choices:["Input, Process, Store, Output","Install, Patch, Reboot","Design UI only","Encrypt only"], correct:0},
-{q:"Which is an input device?", choices:["Keyboard","Monitor","Printer","Speaker"], correct:0},
-{q:"Which is an output device?", choices:["Monitor","Mouse","Scanner","Microphone"], correct:0},
-{q:"Storage is best described as:", choices:["Where data is kept for later use","Only RAM","Just caches","Only cloud"], correct:0},
-{q:"Which is volatile storage?", choices:["RAM","HDD","SSD","Flash drive"], correct:0},
-{q:"Which is non-volatile storage?", choices:["HDD","RAM","CPU cache","Registers"], correct:0},
-{q:"An algorithm is:", choices:["A step-by-step procedure for solving a problem","A storage device","A UI design","A network protocol"], correct:0},
-{q:"Which is a component of an algorithm?", choices:["Input, Process, Output","IDE, Compiler, Linker","RAM, ROM, Cache","HTML, CSS, JS"], correct:0},
-{q:"Efficiency of an algorithm measures:", choices:["Speed and memory usage","Color scheme","Font size","Network bandwidth"], correct:0},
-{q:"Stepwise refinement means:", choices:["Breaking a problem into more detailed steps","Deleting the algorithm","Random guessing","Skipping design"], correct:0},
-{q:"Which is a form of algorithm representation?", choices:["Pseudocode","Source code","Flowchart","All of the above"], correct:3},
-{q:"Which is true about pseudocode?", choices:["It is language-agnostic human-readable steps","It is directly executable","It is a binary format","It is a hardware spec"], correct:0},
-{q:"Which is the correct order in the Information Processing Cycle?", choices:["Input → Processing → Output → Storage","Storage → Input → Output → Processing","Output → Input → Storage → Processing","Processing → Output → Input → Storage"], correct:0},
-{q:"Which SDLC phase defines user requirements?", choices:["Requirement analysis","Coding","Testing","Maintenance"], correct:0},
-{q:"In SDLC, design phase results in:", choices:["Software architecture and specs","Compiled binary","Production deployment","User training only"], correct:0},
-{q:"Implementation phase means:", choices:["Writing code","Gathering requirements","Selling product","Archiving data"], correct:0},
-{q:"Testing phase includes:", choices:["Debugging and quality checks","Only marketing tasks","Design of UI","Hardware manufacturing"], correct:0},
-{q:"Maintenance in SDLC refers to:", choices:["Fixes and enhancements after deployment","Initial requirements gathering","Beta testing only","Prototype creation"], correct:0},
-{q:"Flowchart terminator symbol denotes:", choices:["Start or end","Decision","Process","Input/Output"], correct:0},
-{q:"Flowchart diamond symbol represents:", choices:["Decision/branching","Process","Terminal","Connector"], correct:0},
-{q:"Flowchart rectangle represents:", choices:["Process step","Decision","Start","On-page connector"], correct:0},
-{q:"Flowchart parallelogram indicates:", choices:["Input/Output","Loop","Stop","Initialization"], correct:0},
-{q:"Connector symbols are used to:", choices:["Link sections of a flowchart","Calculate values","Store data","Display output"], correct:0},
-{q:"Which is NOT a flowchart benefit?", choices:["Makes complex processes clearer","Identifies inefficiencies","Automatically runs code","Aids team communication"], correct:2},
-{q:"A variable in programming is:", choices:["A named storage location","A type of algorithm","A compiler","An editor"], correct:0},
-{q:"A constant is:", choices:["Unchanging value","Variable that changes","Storage device","Loop"], correct:0},
-{q:"Which is an example of a high-level programming language?", choices:["C++","Machine code","Assembly","Binary"], correct:0},
-{q:"Assembly language is best described as:", choices:["Low-level, mnemonic-based language","High-level with classes","A database","A markup language"], correct:0},
-{q:"Compiler performs:", choices:["Translates whole source to machine code","Interprets line by line","Designs UI","Formats text"], correct:0},
-{q:"Interpreter performs:", choices:["Translates and executes code line-by-line","Compiles whole program","Only links object files","Only debugs binary"], correct:0},
-{q:"Assembler translates:", choices:["Assembly to machine code","C++ to Python","HTML to CSS","Binary to text"], correct:0},
-{q:"Source code is:", choices:["Human-readable code before compilation","Final machine code","A hardware spec","A test case"], correct:0},
-{q:"Which marks the start of execution in C/C++?", choices:["main() function","printf()","include directive","return statement"], correct:0},
-{q:"A comment in code is used to:", choices:["Explain code to humans","Affect program logic","Speed up execution","Store data"], correct:0},
-{q:"Which symbol starts a single-line comment in C++?", choices:["//","/*","#","--"], correct:0},
-{q:"Which begins a multi-line comment in C++?", choices:["/*","//","<!--","##"], correct:0},
-{q:"Which header provides cout in C++?", choices:["<iostream>","<stdio.h>","<string>","<math.h>"], correct:0},
-{q:"cout is used for:", choices:["Output to console","Input from keyboard","File management","Memory allocation"], correct:0},
-{q:"cin is used for:", choices:["Input from console","Output to console","Compiling code","Sorting arrays"], correct:0},
-{q:"Which operator inserts into cout?", choices:["<<",">>",":=","=="], correct:0},
-{q:"Which operator extracts from cin?", choices:[">>","<<","===","!="], correct:0},
-{q:"The semicolon ; in C++ ends a:", choices:["Statement","Function","Comment","Header"], correct:0},
-{q:"int data type stores:", choices:["Whole numbers","Decimals","Text","Logical values"], correct:0},
-{q:"float stores:", choices:["Floating point numbers","Characters","Booleans","Arrays"], correct:0},
-{q:"bool type stores:", choices:["true/false","Numbers only","Strings only","Files"], correct:0},
-{q:"char stores a:", choices:["Single character","String","Array","Boolean"], correct:0},
-{q:"String literals are enclosed in:", choices:['"double quotes\'','single quotes','curly braces','angle brackets'], correct:0},
-{q:"Array index in C++ starts at:", choices:["0","1","-1","Any"], correct:0},
-{q:"An infinite loop occurs when:", choices:["Exit condition never met","All loops end","Loop runs once","Compiler error"], correct:0},
-{q:"Which loop checks condition before executing?", choices:["while and for (pre-test)","do-while only","None","All post-test loops"], correct:0},
-{q:"Which loop is exit-controlled?", choices:["do-while","while","for","if"], correct:0},
-{q:"for loop typically includes:", choices:["init; condition; increment","init only","condition only","increment only"], correct:0},
-{q:"break statement does:", choices:["Exit current loop or switch","Pause program","Restart loop","Increase variable"], correct:0},
-{q:"continue statement does:", choices:["Skip to next iteration","Exit program","Reset variable","Print output"], correct:0},
-{q:"Function prototype declares:", choices:["Function signature before use","Variable value","Class object","Array size"], correct:0},
-{q:"Return statement in a function does:", choices:["Return a value to caller","Initialize variable","Print output","Start loop"], correct:0},
-{q:"Void function returns:", choices:["No value","Integer","String","Array"], correct:0},
-{q:"Parameter passing by value copies data to:", choices:["Function parameter","Original variable","Disk","Network"], correct:0},
-{q:"Pass by reference passes:", choices:["Address allowing modification of original","A copy","Only constants","A printout"], correct:0},
-{q:"Recursion is when a function:", choices:["Calls itself","Calls only other functions","Is iterative only","Is inline"], correct:0},
-{q:"Base case in recursion ensures:", choices:["Termination condition","Infinite loop","Compilation error","Syntax"], correct:0},
-{q:"Stack overflow often caused by:", choices:["Excessive recursion","Large arrays","Fast CPU","Network latency"], correct:0},
-{q:"Pointer stores a:", choices:["Memory address","File","String","Function"], correct:0},
-{q:"Dereferencing a pointer uses operator:", choices:["*","&","#","%"], correct:0},
-{q:"Address-of operator is:", choices:["&","*","^","%"], correct:0},
-{q:"Dynamic memory allocation in C++ uses:", choices:["new and delete","malloc only","alloc only","free only"], correct:0},
-{q:"Segmentation fault usually means:", choices:["Invalid memory access","Correct program","Successful compile","Large file"], correct:0},
-{q:"Which is an example of software?", choices:["Operating system","Keyboard","Monitor","Cable"], correct:0},
-{q:"Open-source software means:", choices:["Source code is publicly available","Always free of charge","Proprietary","Hardware"], correct:0},
-{q:"GUI stands for:", choices:["Graphical User Interface","General User Instruction","Global UI Index","Graphical Utility Input"], correct:0},
-{q:"CLI stands for:", choices:["Command Line Interface","Computer Language Interaction","Control Link Input","Compiled Library Interface"], correct:0},
-{q:"Which is NOT part of an OS?", choices:["Printer hardware","File system","Process scheduler","Memory manager"], correct:0},
-{q:"Process scheduling is done by:", choices:["Operating system","User application","Printer","Monitor"], correct:0},
-{q:"File system organizes data into:", choices:["Files and directories","Only RAM","Source code only","Network packets"], correct:0},
-{q:"Which is an example of application software?", choices:["Word processor","Device driver","BIOS","Kernel"], correct:0},
-{q:"A database stores:", choices:["Structured data for retrieval","Only text files","Only images","Only executable"], correct:0},
-{q:"Which is a DBMS?", choices:["MySQL","CPU","RAM","Monitor"], correct:0},
-{q:"SQL is used for:", choices:["Querying and manipulating relational databases","Styling web pages","Writing hardware drivers","Compiling code"], correct:0},
-{q:"Which is a markup language?", choices:["HTML","C++","Python","Assembly"], correct:0},
-{q:"CSS is used for:", choices:["Styling visual presentation of HTML","Querying databases","Server-side scripting","Compiling code"], correct:0},
-{q:"JavaScript is mainly used for:", choices:["Client-side interactivity","Operating system","Database management","Image editing"], correct:0},
-{q:"HTML element <p> is for:", choices:["Paragraph","Picture","Parameter","Process"], correct:0},
-{q:"<img> tag requires which attribute for source?", choices:["src","href","alt","id"], correct:0},
-{q:"Alt attribute is used for:", choices:["Alternate text for images","Link destination","Style hint","Script name"], correct:0},
-{q:"Anchor tag uses attribute:", choices:["href","src","alt","style"], correct:0},
-{q:"To create a table row use:", choices:["<tr>","<td>","<th>","<table>"], correct:0},
-{q:"To make table header cell use:", choices:["<th>","<td>","<tr>","<table>"], correct:0},
-{q:"CSS selector for id uses:", choices:["#id"," .class","tag","@id"], correct:0},
-{q:"CSS selector for class uses:", choices:[".class","#id","tag","&class"], correct:0},
-{q:"Inline CSS goes in:", choices:["style attribute","<style> file only","JavaScript file","HTML comment"], correct:0},
-{q:"Box model includes margin, border, padding, and:", choices:["content","font","image","script"], correct:0},
-{q:"Which JS function writes to the console?", choices:["console.log()","print()","echo()","System.out.println()"], correct:0},
-{q:"document.getElementById returns:", choices:["Element object with that id","A list of classes","A CSS rule","Null always"], correct:0},
-{q:"Which event triggers when a user clicks?:", choices:["onclick","onhover","onload","onchange"], correct:0},
-{q:"JSON stands for:", choices:["JavaScript Object Notation","Java Standard Output Notation","JavaScript Order Node","Just Simple Object Notation"], correct:0},
-{q:"AJAX is used to:", choices:["Perform asynchronous HTTP requests","Style elements","Compile code","Store files locally"], correct:0},
-{q:"Which HTTP method retrieves data without side effects?", choices:["GET","POST","PUT","DELETE"], correct:0},
-{q:"Which HTTP method submits data to be processed?", choices:["POST","GET","HEAD","OPTIONS"], correct:0},
-{q:"Client-server architecture separates:", choices:["Client UI and server logic","Everything into one program","Hardware only","Only databases"], correct:0},
-{q:"Which is a network device that forwards packets between networks?", choices:["Router","Switch","Printer","Monitor"], correct:0},
-{q:"Local Area Network (LAN) typically covers:", choices:["A small geographic area like a building","A country","The whole world","Only two devices"], correct:0},
-{q:"Internet is a global network of:", choices:["Networks","Computers only","Printers only","Cables only"], correct:0},
-{q:"IP address uniquely identifies a:", choices:["Host on a network","Programming language","File type","HTML tag"], correct:0},
-{q:"DNS resolves domain names to:", choices:["IP addresses","MAC addresses","Ports","Protocols"], correct:0},
-{q:"Which is a security practice to protect accounts?", choices:["Using strong passwords and 2FA","Sharing passwords","Writing passwords on notes","Using common words"], correct:0},
-{q:"Malware stands for:", choices:["Malicious software","Malleable software","Mobile app","Managed library"], correct:0},
-{q:"Backup is important to protect against:", choices:["Data loss","Faster CPU","Better UI","Lower storage"], correct:0},
-{q:"Encryption secures data by:", choices:["Transforming it so only authorized can read","Compressing it","Deleting it","Styling it"], correct:0},
-{q:"Which is an example of symmetric encryption?", choices:["AES","RSA (asymmetric)","Public-key only","Hashing only"], correct:0},
-{q:"Which is a common file extension for HTML?", choices:[".html",".css",".js",".exe"], correct:0},
-{q:"Which file extension is for CSS?", choices:[".css",".html",".py",".java"], correct:0},
-{q:"Which is a server-side language?", choices:["PHP","HTML","CSS","JSON"], correct:0},
-{q:"Which is used for version control?", choices:["Git","HTML","CSS","JS"], correct:0},
-{q:"Commit in Git means:", choices:["Save snapshot to repository","Delete repository","Run code","Compile code"], correct:0},
-{q:"Push in Git means:", choices:["Upload local commits to remote repo","Download files","Create branch","Merge branches automatically"], correct:0},
-{q:"Merge in Git combines:", choices:["Branches","Files into database","Programming languages","Servers"], correct:0},
-{q:"Which is a loop control statement?", choices:["break","stylesheet","header","footer"], correct:0},
-{q:"Which operator checks equality in C++ (value)?", choices:["==","=","===","~="], correct:0},
-{q:"Which operator assigns value in C++?", choices:["=","==","->","::"], correct:0},
-{q:"Logical AND in C++ is:", choices:["&&","||","!","&"], correct:0},
-{q:"Logical OR in C++ is:", choices:["||","&&","!","|"], correct:0},
-{q:"Logical NOT in C++ is:", choices:["!","~","!!","&&"], correct:0},
-{q:"Short-circuit evaluation means:", choices:["Evaluation stops early if result known","Always evaluates both operands","Delays evaluation","Increases memory"], correct:0},
-{q:"Truthiness: in C++ zero is considered:", choices:["false","true","null","undefined"], correct:0},
-{q:"Which is a ternary operator in many languages?", choices:["condition ? expr1 : expr2","if else","switch case","loop"], correct:0},
-{q:"Which is the correct array declaration in C++ for 5 ints?", choices:["int arr[5];","arr int[5];","int[5] arr;","array<int> arr(5);"], correct:0},
-{q:"When declaring a string literal in C++ use:", choices:['"Hello"','\'Hello\'','`Hello`','<Hello>'], correct:0},
-{q:"Which is true about functions?", choices:["They encapsulate reusable behavior","They are only global","They cannot return values","They are hardware"], correct:0},
-{q:"Prototype vs definition: prototype declares; definition:", choices:["Implements function body","Removes function","Compiles code only","Returns void"], correct:0},
-{q:"Which data structure stores key-value pairs?", choices:["Dictionary/Map","Array","Stack","Queue"], correct:0},
-{q:"Stack follows which order?", choices:["LIFO","FIFO","Random","Sorted"], correct:0},
-{q:"Queue follows which order?", choices:["FIFO","LIFO","LILO","FIFI"], correct:0},
-{q:"Which is a stable sorting algorithm commonly taught?", choices:["Merge sort","Selection sort","Bubble sort as efficient","Random sort"], correct:0},
-{q:"Binary search requires:", choices:["Sorted array","Unsorted array","Linked list only","Hash table only"], correct:0},
-{q:"Hash table maps keys to:", choices:["Buckets/indices","Graphics","Files","Tables only"], correct:0},
-{q:"Which measure shows center of distribution?", choices:["Mean","Variance","Skewness","Kurtosis"], correct:0},
-{q:"Which measure shows spread of distribution?", choices:["Standard deviation","Mode","Median","Count"], correct:0},
-{q:"Which is NOT true about normal distribution?", choices:["Symmetric","Mean=median=mode","Always discrete","Bell-shaped"], correct:2},
-{q:"Z-table gives areas under:", choices:["Standard normal curve","Uniform curve","Exponential curve","Poisson curve"], correct:0},
-{q:"Which is an example of a presentation layer technology?", choices:["HTML/CSS","TCP/IP","USB","HDD"], correct:0},
-{q:"Which tag defines a hyperlink in HTML?", choices:["<a>","<link>","<href>","<nav>"], correct:0},
-{q:"Which attribute opens link in new tab?", choices:["target=\"_blank\"","rel=\"new\"","open=\"true\"","href=\"_blank\""], correct:0},
-{q:"Which CSS property sets background color?", choices:["background-color","color","bg","font-color"], correct:0},
-{q:"Which CSS property sets text size?", choices:["font-size","text-size","size","font-weight"], correct:0},
-{q:"Which HTML tag displays a list with bullets?", choices:["<ul>","<ol>","<li>","<dl>"], correct:0},
-{q:"Which HTML tag creates an ordered list?", choices:["<ol>","<ul>","<li>","<table>"], correct:0},
-{q:"Which JS data type represents true/false?", choices:["Boolean","String","Number","Object"], correct:0},
-{q:"Which symbol starts an HTML comment?", choices:["<!--","/*","#--","//"], correct:0},
-{q:"Which measures web performance by round-trip time for requests?", choices:["Latency","Bandwidth","Throughput","Accuracy"], correct:0},
-{q:"Which is an example of client-side validation?", choices:["JS check before submit","Server script validate","Database check","Disk check"], correct:0},
-{q:"Which tool helps inspect web elements in browser?", choices:["Developer Tools (DevTools)","Notepad","Terminal","Printer"], correct:0},
-{q:"Which is core to responsive web design?", choices:["Flexible grids and media queries","Fixed pixel widths","Large images only","No CSS"], correct:0},
-{q:"Which HTTP status code indicates success?", choices:["200","404","500","302"], correct:0},
-{q:"Which HTTP status code indicates resource not found?", choices:["404","200","301","500"], correct:0},
-{q:"Which status code indicates server error?", choices:["500","200","301","404"], correct:0},
-{q:"Which is the command to initialize a new Git repository?", choices:["git init","git start","git new","git create"], correct:0},
-{q:"Which command stages changes for commit?", choices:["git add","git stage","git commit","git push"], correct:0},
-{q:"Which command records changes to the local repository?", choices:["git commit","git add","git push","git pull"], correct:0},
-{q:"Which uploads commits to remote repo?", choices:["git push","git commit","git clone","git init"], correct:0},
-{q:"Which downloads remote changes to local?", choices:["git pull","git push","git add","git commit"], correct:0},
-{q:"Which is primary benefit of modular programming?", choices:["Reusability & maintainability","Slower code","One-file code","Less readability"], correct:0},
-{q:"Which is part of problem analysis?", choices:["Understanding inputs and desired outputs","Random coding","Ignoring requirements","Skipping tests"], correct:0},
-{q:"Which best describes top-down design?", choices:["Start with high-level and refine into details","Code first, design later","Use only low-level routines","No algorithm needed"], correct:0},
-{q:"Which is an example of stepwise refinement?", choices:["Breaking a task into subtasks","Merging modules","Deleting tests","Skipping design"], correct:0},
-{q:"Which is true about testing phase?", choices:["It finds defects and ensures quality","It writes requirements","It deploys to production automatically","It makes hardware changes"], correct:0},
-{q:"Unit testing tests:", choices:["Individual modules/functions","Whole system only","Only UI","Only performance"], correct:0},
-{q:"Integration testing focuses on:", choices:["Interaction of modules","Only database","Only front-end","Only hardware"], correct:0},
-{q:"User Acceptance Testing (UAT) validates:", choices:["System meets user needs","Compiler works","Network speed","Editor preferences"], correct:0},
-{q:"Debugging means:", choices:["Finding and fixing defects","Deleting source code","Reformatting disks","Installing OS"], correct:0},
-{q:"Which is NOT a valid HTML element name?", choices:["<div>","<span>","<container>","<p>"], correct:2},
-{q:"Which tag defines a table cell?", choices:["<td>","<tr>","<table>","<th>"], correct:0},
-{q:"Which HTML attribute identifies an element uniquely?", choices:["id","class","style","name"], correct:0},
-{q:"Which HTML attribute groups styles in CSS?", choices:["class","id","src","href"], correct:0},
-{q:"Which CSS property changes element spacing inside border?", choices:["padding","margin","border","display"], correct:0},
-{q:"Which CSS property changes space outside border?", choices:["margin","padding","border","position"], correct:0},
-{q:"Which HTML5 element is semantic for main content?", choices:["<main>","<div>","<span>","<section>"], correct:0},
-{q:"Which tag is used for largest heading?", choices:["<h1>","<h6>","<p>","<title>"], correct:0},
-{q:"Which attribute adds alternative text to an image?", choices:["alt","title","src","href"], correct:0},
-{q:"Which JS statement declares a variable (modern)?", choices:["let","var only","def","int"], correct:0},
-{q:"Which keyword defines a constant in JS?", choices:["const","let","var","constant"], correct:0},
-{q:"Which loop best for iterating a fixed number of times?", choices:["for","while (unknown times)","do-while","if"], correct:0},
-{q:"Which is asynchronous JS technique?", choices:["Promises / async-await","Synchronous for loops","Blocking alerts","Inline styles"], correct:0},
-{q:"Which is a relational operator?", choices:[">=","++","--","::"], correct:0},
-{q:"Which symbol is modulus operator in C++?", choices:["%","/","*","+"], correct:0},
-{q:"Which operator concatenates strings in many languages?", choices:["+","-","*","/"], correct:0},
-{q:"Which is true about comments? (best practice)", choices:["Use to explain intent, not restate code","Never use comments","Replace good variable names","Always write long paragraphs"], correct:0},
-{q:"Which is a basic security practice for web apps?", choices:["Validate input and use HTTPS","Trust all user input","Disable authentication","Store passwords in plain text"], correct:0},
-{q:"Which algorithmic complexity is better: O(n) or O(n^2)?", choices:["O(n) (linear) is better for large n","O(n^2) is always better","They are equal always","O(n^2) for simplicity"], correct:0},
-{q:"Which is a characteristic of good algorithm?", choices:["Correctness, clarity, efficiency","Lengthy code only","Obscure logic","Random results"], correct:0},
-{q:"Which is example of unstructured data?", choices:["Text documents, images","Numbers in table","CSV only","Excel columns only"], correct:0},
-{q:"Which is example of structured data?", choices:["Database tables","Images only","Raw logs only","Videos only"], correct:0},
-{q:"Which is used to debug network connectivity issues?", choices:["ping and traceroute","printf only","console.log only","git status"], correct:0},
-{q:"Which technique prevents SQL injection?", choices:["Use parameterized queries / prepared statements","Concatenating user input","Trust all input","Do nothing"], correct:0},
-{q:"Which license is permissive open-source?", choices:["MIT","Proprietary only","GPL only","Closed-source"], correct:0},
-{q:"Which is example of strong password practice?", choices:["Long, mixed characters and unique per site","Use 'password' everywhere","Share with colleagues","Write on sticky note"], correct:0},
-{q:"Which is not a programming paradigm?", choices:["Compilation (this is not a paradigm)","Object-oriented","Functional","Procedural"], correct:0},
-{q:"Which is example of functional language?", choices:["Haskell","C++","Assembly","HTML"], correct:0},
-{q:"Which is example of object-oriented concept?", choices:["Encapsulation","Linker","Assembler","Router"], correct:0},
-{q:"Which is principle of DRY?", choices:["Don't Repeat Yourself","Do Repeat Yourself","Debug Right Yesterday","Don't Run Yesterday"], correct:0},
-{q:"Which is unit of digital storage equal to 1024 bytes?", choices:["Kilobyte (technically kibibyte)","Megabyte","Gigabyte","Terabyte"], correct:0},
-{q:"Which best describes cloud computing?", choices:["On-demand network access to shared computing resources","Only local hardware","Only storage on USB","Only email"], correct:0},
-{q:"Which is a PaaS example?", choices:["Heroku","AWS EC2 IaaS variant","A physical server","A router"], correct:0},
-{q:"Which is SaaS example?", choices:["Google Workspace","Linux distro ISO","Web server hardware","Local app without web"], correct:0},
-{q:"Which is IaaS example?", choices:["AWS EC2","Google Docs SaaS","Code editor","Printer"], correct:0},
-{q:"Which is a responsive design technique?", choices:["Media queries and flexible grids","Fixed pixel layouts","Absolute positioning only","Large fonts only"], correct:0},
-{q:"Which tag groups form controls?", choices:["<fieldset>","<form>","<input>","<label>"], correct:0},
-{q:"Which input type accepts multiple lines?", choices:["<textarea>","<input type='text'>","<select>","<button>"], correct:0},
-{q:"Which attribute sets input placeholder text?", choices:["placeholder","value","label","title"], correct:0},
-{q:"Which is semantic HTML for navigation?", choices:["<nav>","<div>","<section>","<span>"], correct:0},
-{q:"Which CSS property makes element inline-block?", choices:["display:inline-block","position:fixed","float:left","visibility:hidden"], correct:0},
-{q:"Which is default display of a <div>?", choices:["block","inline","inline-block","none"], correct:0},
-{q:"Which HTML element groups options in a select?", choices:["<optgroup>","<option>","<select>","<fieldset>"], correct:0},
-{q:"Which statement best about progressive enhancement?", choices:["Start with baseline functionality and layer up","Start with JS and ignore HTML","Only support newest browsers","Avoid accessibility"], correct:0},
-{q:"Which is W3C?", choices:["Standards organization for web technologies","A programming language","A database","A web browser"], correct:0}
+{q:"Which is the best definition of a computer?", choices:["A programmable electronic device that processes data into information","A device that only stores files","A language for programming","A social media platform"], correct:0},
+
+{q:"DATA is:", choices:["Raw, unprocessed facts","Processed and meaningful information","Only numbers","A storage medium"], correct:0},
+
+{q:"INFORMATION is:", choices:["Processed data presented usefully","Unprocessed raw facts","A type of memory","Only images"], correct:0},
+
+{q:"Which is NOT part of the Information Processing System (IPS)?", choices:["Peopleware","Hardware","Paintware","Software"], correct:2},
+
+{q:"Which is an example of hardware?", choices:["CPU","Operating system","Spreadsheet application","Natural language"], correct:0},
+
+{q:"Which is an example of software?", choices:["Web browser","Keyboard","Monitor","Mouse"], correct:0},
+
+{q:"Peopleware refers to:", choices:["Users, developers, and operators","A software license","A database","A hardware manual"], correct:0},
+
+{q:"Which is the correct IPS cycle order?", choices:["Input → Process → Output → Storage","Output → Input → Storage → Process","Storage → Input → Output → Process","Process → Output → Input → Storage"], correct:0},
+
+{q:"Which is an input device?", choices:["Keyboard","Printer","Monitor","Speaker"], correct:0},
+
+{q:"Which is an output device?", choices:["Printer","Mouse","Scanner","Microphone"], correct:0},
+
+{q:"Which is volatile memory?", choices:["RAM","HDD","SSD","Flash drive"], correct:0},
+
+{q:"Which is persistent storage?", choices:["HDD","RAM","CPU cache","Registers"], correct:0},
+
+{q:"An algorithm is:", choices:["A step-by-step procedure to solve a problem","A storage device","A webpage","A network protocol"], correct:0},
+
+{q:"Which is a characteristic of a good algorithm?", choices:["Correctness, clarity, efficiency","Lengthy comments only","Large memory use","Random steps"], correct:0},
+
+{q:"Stepwise refinement is:", choices:["Breaking an algorithm into smaller detailed steps","Merging unrelated tasks","Skipping testing","Only writing code"], correct:0},
+
+{q:"Which is a valid form to express an algorithm?", choices:["Pseudocode and flowchart","Only binary code","Only compiled code","Only HTML"], correct:0},
+
+{q:"Pseudocode is best described as:", choices:["Human-readable algorithm-like steps","Executable machine code","A compiled program","A CSS file"], correct:0},
+
+{q:"Flowchart's diamond shape means:", choices:["Decision or branching","Start/Stop","Process","Input/Output"], correct:0},
+
+{q:"Flowchart rectangle stands for:", choices:["Process or operation","Decision","Connector","Input/Output"], correct:0},
+
+{q:"Flowchart parallelogram is used for:", choices:["Input/Output","Process","Decision","Start/Stop"], correct:0},
+
+{q:"Which SDLC phase gathers user requirements?", choices:["Requirement analysis","Testing","Maintenance","Implementation"], correct:0},
+
+{q:"Which SDLC phase designs system architecture?", choices:["Design","Coding","Deployment","Evaluation"], correct:0},
+
+{q:"Which SDLC phase writes source code?", choices:["Implementation/Coding","Requirement analysis","Maintenance","Design"], correct:0},
+
+{q:"Which SDLC phase finds and fixes defects?", choices:["Testing and Debugging","Deployment","Requirement Gathering","Design"], correct:0},
+
+{q:"Maintenance phase includes:", choices:["Bug fixes and enhancements after deployment","Initial coding only","Only UI design","Only requirement docs"], correct:0},
+
+{q:"What is the primary purpose of testing?", choices:["Find defects and validate behavior","Design the UI","Purchase hardware","Write documentation"], correct:0},
+
+{q:"Which describes a variable?", choices:["A named location in memory that stores data","A fixed constant value","A type of compiler","A network device"], correct:0},
+
+{q:"A constant is:", choices:["A value that does not change during program execution","A changing variable","A type of loop","A compiler flag"], correct:0},
+
+{q:"Which symbol starts a single-line comment in C++?", choices:["//","/*","<!--","#"], correct:0},
+
+{q:"Which starts a multi-line comment in C++?", choices:["/*","//","<!--","##"], correct:0},
+
+{q:"Which header contains cout in C++?", choices:["<iostream>","<stdio.h>","<string>","<math.h>"], correct:0},
+
+{q:"cout is used to:", choices:["Display output to console","Read input","Allocate memory","Sort arrays"], correct:0},
+
+{q:"cin is used to:", choices:["Read input from console","Print to file","Declare variables","Create loops"], correct:0},
+
+{q:"Which operator is used with cout to output text?", choices:["<<",">>",":=",":"]; ,}, correct:0},
+
+{q:"Which operator is used with cin to read input?", choices:[">>","<<","--","++"], correct:0},
+
+{q:"Which character ends a C++ statement?", choices:[";","{","}","#"], correct:0},
+
+{q:"int data type stores:", choices:["Whole numbers (integers)","Text strings","Boolean values only","Floating point numbers"], correct:0},
+
+{q:"float stores:", choices:["Decimal numbers","Characters","Booleans","Arrays"], correct:0},
+
+{q:"char stores:", choices:["A single character","Multiple words","A boolean","A file"], correct:0},
+
+{q:"bool type stores:", choices:["true or false","Strings only","Integers only","Files"], correct:0},
+
+{q:"Which is a correct array declaration for 5 ints in C++?", choices:["int arr[5];","int arr();","array int[5];","int[5] arr;"], correct:0},
+
+{q:"Array indexing in C++ starts at:", choices:["0","1","-1","Any value"], correct:0},
+
+{q:"Which is an example of a 2D array declaration?", choices:["int a[3][4];","int a(3,4);","array a[3,4];","int a[3];"], correct:0},
+
+{q:"Which control structure executes statements in sequence?", choices:["Sequential","Selection","Iteration","Recursion"], correct:0},
+
+{q:"If statement is used for:", choices:["Decision-making (branching)","Looping","Function declaration","Memory allocation"], correct:0},
+
+{q:"If/else allows:", choices:["Different actions when condition true or false","Only true branch","Only false branch","No branching"], correct:0},
+
+{q:"switch statement is best used when:", choices:["Multiple discrete values of a variable are tested","You need mathematical integration","Formatting text","Networking"], correct:0},
+
+{q:"while loop checks condition when?", choices:["Before each iteration (pre-test)","After each iteration (post-test)","Only once at start","Never"], correct:0},
+
+{q:"do-while loop checks condition when?", choices:["After body executes (post-test)","Before body executes","At compile time","Only on error"], correct:0},
+
+{q:"for loop is ideal for:", choices:["Known number of iterations","Unknown repetitions","Only infinite loops","Only recursion"], correct:0},
+
+{q:"break inside a loop does:", choices:["Exit the loop immediately","Skip to next iteration","Restart program","Close file"], correct:0},
+
+{q:"continue inside a loop does:", choices:["Skip remaining statements in current iteration","Exit program","Delete array","Pause loop"], correct:0},
+
+{q:"What is recursion?", choices:["Function calling itself","Loop within a loop","A variable type","An operator"], correct:0},
+
+{q:"Base case in recursion ensures:", choices:["Termination of recursion","Infinite recursion","Automatic memory free","Faster compilation"], correct:0},
+
+{q:"Which is used for dynamic memory allocation in C++?", choices:["new and delete","malloc and free (C style)","alloc only","static only"], correct:0},
+
+{q:"Pointer stores:", choices:["Memory address","File name","String content","Boolean value"], correct:0},
+
+{q:"Dereference operator for pointer is:", choices:["*","&","->","::"], correct:0},
+
+{q:"Address-of operator is:", choices:["&","*","%","$"], correct:0},
+
+{q:"Which best describes pseudo code?", choices:["An informal, language-agnostic description of algorithm steps","Executable binary code","A CSS stylesheet","A network packet"], correct:0},
+
+{q:"Which flowchart symbol denotes start/end?", choices:["Oval/Terminator","Diamond","Rectangle","Parallelogram"], correct:0},
+
+{q:"Which flowchart symbol denotes input/output?", choices:["Parallelogram","Diamond","Rectangle","Oval"], correct:0},
+
+{q:"Which flowchart symbol denotes process or operation?", choices:["Rectangle","Diamond","Oval","Parallelogram"], correct:0},
+
+{q:"Which describes a good test case?", choices:["Clear, reproducible, with expected result","Ambiguous and long","Only used in production","Only for developers"], correct:0},
+
+{q:"Unit testing focuses on:", choices:["Single modules or functions","Entire system only","Deployment pipeline","Hardware testing"], correct:0},
+
+{q:"Integration testing checks:", choices:["Interaction between modules","Only database","Only UI","Only network"], correct:0},
+
+{q:"Which is a primary goal of SDLC requirement analysis?", choices:["Understand what the user needs and restrictions","Write code immediately","Buy hardware","Hire staff"], correct:0},
+
+{q:"Which is a deliverable from design phase?", choices:["System architecture and design documents","Compiled binaries","Helpdesk tickets","Marketing materials"], correct:0},
+
+{q:"Which is true about maintenance phase?", choices:["It includes bug fixing and enhancements after deployment","It ends development forever","It deletes user data","It stops testing"], correct:0},
+
+{q:"Which is true about source code control (version control)?", choices:["Tracks changes, enables collaboration and history","Automatically writes requirements","Compiles code","Runs tests"], correct:0},
+
+{q:"Which command creates a local Git repository?", choices:["git init","git start","git create","git new"], correct:0},
+
+{q:"Which is the purpose of 'git commit'?", choices:["Record staged changes in local repository","Upload to remote","Remove files","Initialize repo"], correct:0},
+
+{q:"Which HTML tag defines a hyperlink?", choices:["<a>","<link>","<href>","<nav>"], correct:0},
+
+{q:"Which attribute is used to specify link target URL?", choices:["href","src","alt","id"], correct:0},
+
+{q:"Which tag is used for an image?", choices:["<img>","<image>","<picture>","<photo>"], correct:0},
+
+{q:"Which attribute provides alternate text for an image?", choices:["alt","title","src","id"], correct:0},
+
+{q:"Which tag is for an unordered list?", choices:["<ul>","<ol>","<li>","<dl>"], correct:0},
+
+{q:"Which tag is for an ordered (numbered) list?", choices:["<ol>","<ul>","<li>","<dl>"], correct:0},
+
+{q:"Which HTML element is semantic for main content?", choices:["<main>","<div>","<span>","<section>"], correct:0},
+
+{q:"Which tag defines a table row?", choices:["<tr>","<td>","<th>","<table>"], correct:0},
+
+{q:"Which tag defines a table cell?", choices:["<td>","<tr>","<th>","<table>"], correct:0},
+
+{q:"Which CSS property sets text color?", choices:["color","background","font-size","display"], correct:0},
+
+{q:"Which CSS property sets font size?", choices:["font-size","text-size","size","font-weight"], correct:0},
+
+{q:"Which CSS selector targets an element with id 'myId'?", choices:["#myId",".myId","myId","*myId"], correct:0},
+
+{q:"Which selector targets elements with class 'item'?", choices:[".item","#item","item","*item"], correct:0},
+
+{q:"Which is an inline CSS example?", choices:["<p style=\"color:red\">Text</p>","<p class=\"red\">Text</p>","<p id=\"red\">Text</p>","<p>Text</p>"], correct:0},
+
+{q:"What does JS console.log() do?", choices:["Prints message to developer console","Shows alert to user","Writes to file","Compiles code"], correct:0},
+
+{q:"Which method selects element by id in JS?", choices:["document.getElementById('id')","getElement('id')","query('#id')","select('id')"], correct:0},
+
+{q:"Which event runs when page fully loads?", choices:["window.onload","onclick","onhover","onchange"], correct:0},
+
+{q:"Which operator compares equality of values in C++?", choices:["==","=","===","!="], correct:0},
+
+{q:"Which operator assigns a value in C++?", choices:["=","==","=>","::"], correct:0},
+
+{q:"Which logical operator is AND in C++?", choices:["&&","||","!","&"], correct:0},
+
+{q:"Which logical operator is OR in C++?", choices:["||","&&","!","|"], correct:0},
+
+{q:"Which logical operator is NOT in C++?", choices:["!","~","&&","||"], correct:0},
+
+{q:"Short-circuit evaluation stops evaluating when:", choices:["Result determined by first operand","Always evaluate both","Never stops early","Only in loops"], correct:0},
+
+{q:"Which is an off-by-one risk area?", choices:["Array indexing and loop boundaries","CSS selectors","Image alt text","Database backups"], correct:0},
+
+{q:"Which is true about zero in conditional expressions (C/C++)?", choices:["Zero is false, non-zero is true","Zero is true","Zero undefined","Zero is an exception"], correct:0},
+
+{q:"Which is the best way to prevent SQL injection?", choices:["Use parameterized queries / prepared statements","Concatenate user input into SQL","Trust user input","Skip validation"], correct:0},
+
+{q:"Which is a common web security practice?", choices:["Use HTTPS and strong input validation","Send passwords in plain text","Use weak hashing","Expose debug info"], correct:0},
+
+{q:"Which tag groups form controls visually?", choices:["<fieldset>","<form>","<div>","<label>"], correct:0},
+
+{q:"Which input element allows multiline text?", choices:["<textarea>","<input type='text'>","<select>","<button>"], correct:0},
+
+{q:"Which HTML attribute associates a label with an input?", choices:["for","id","class","name"], correct:0},
+
+{q:"Which CSS property controls layout in modern CSS (two-dimensional)?", choices:["grid","float","position","display:none"], correct:0},
+
+{q:"Which layout model is for one-dimensional layout?", choices:["flexbox","grid","table","float"], correct:0},
+
+{q:"Which HTTP method should be used to request data without side-effects?", choices:["GET","POST","PUT","DELETE"], correct:0},
+
+{q:"Which HTTP method is used to submit data to be processed to the server?", choices:["POST","GET","HEAD","OPTIONS"], correct:0},
+
+{q:"Which is responsible for translating a domain name to an IP address?", choices:["DNS","DHCP","FTP","SMTP"], correct:0},
+
+{q:"Which is an example of a good password practice?", choices:["Use long unique passphrases and enable 2FA","Use same password everywhere","Write password on a sticky note","Use 'password'"], correct:0},
+
+{q:"Which is the meaning of 'backup'?", choices:["Copy of data kept for recovery","Faster SSD","Permanent delete","Database index"], correct:0},
+
+{q:"Which best describes 'open source' software?", choices:["Source code is publicly available and reusable under license","Always paid software only","Hardware product","Proprietary only"], correct:0},
+
+{q:"Which is the best reason to modularize code?", choices:["Easier testing, reuse, and maintenance","Make code longer","Increase coupling","Hide requirements"], correct:0},
+
+{q:"Which sorting algorithm is divide-and-conquer and efficient O(n log n)?", choices:["Merge sort","Bubble sort","Selection sort","Insertion sort"], correct:0},
+
+{q:"Binary search works on:", choices:["Sorted arrays/lists","Unsorted lists","Graphs only","Images only"], correct:0},
+
+{q:"Which is a typical unit of digital storage equal to 1024 bytes (approx)?", choices:["Kilobyte (technically kibibyte)","Megabyte","Gigabyte","Terabyte"], correct:0},
+
+{q:"Which HTML5 element is used for defining navigation links?", choices:["<nav>","<header>","<aside>","<footer>"], correct:0},
+
+{q:"Which HTML attribute makes a link open in a new tab?", choices:["target=\"_blank\"","open=\"new\"","rel=\"noopener\"","href=\"new\""], correct:0},
+
+{q:"Which is the correct way to include external CSS file?", choices:["<link rel=\"stylesheet\" href=\"styles.css\">","<script src=\"styles.css\"></script>","<style src=\"styles.css\"></style>","<css src=\"styles.css\">"], correct:0},
+
+{q:"Which JS keyword declares a block-scoped variable?", choices:["let","var","constvar","def"], correct:0},
+
+{q:"Which JS keyword declares a constant reference?", choices:["const","let","var","static"], correct:0},
+
+{q:"Which is true about 'HTTP 404' status?", choices:["Resource not found","OK success","Server error","Redirect"], correct:0},
+
+{q:"Which is true about 'HTTP 200' status?", choices:["Request succeeded","Resource not found","Server error","Unauthorized"], correct:0},
+
+{q:"Which is a best practice for accessibility in HTML?", choices:["Provide alt attributes for images and use semantic tags","Only use images without text","Use tiny fonts","Avoid labels"], correct:0}
 ];
 
+// ===== BUILD QUIZ =====
 const quizEl = document.getElementById('quiz');
 
 questions.forEach((item, idx) => {
@@ -278,21 +300,26 @@ questions.forEach((item, idx) => {
   block.className = 'q';
   let inner = `<strong>${idx+1}. ${item.q}</strong><div class="choices">`;
   item.choices.forEach((ch,i)=> {
-    inner += `<label><input type="radio" name="q${idx}" value="${i}"> ${String.fromCharCode(65+i)}. ${ch}</label>`;
+    // escape any quotes in ch for safety
+    const safeChoice = ch.replace(/"/g, '&quot;');
+    inner += `<label><input type="radio" name="q${idx}" value="${i}"> ${String.fromCharCode(65+i)}. ${safeChoice}</label>`;
   });
   inner += '</div>';
   block.innerHTML = inner;
   quizEl.appendChild(block);
 });
 
-
+// ===== SUBMIT & SHOW KEY =====
 const submitBtn = document.getElementById('submitBtn');
 const showKeyBtn = document.getElementById('showKeyBtn');
 const resultDiv = document.getElementById('result');
 const answersDiv = document.getElementById('answers');
 
 submitBtn.addEventListener('click', () => {
+  // disable inputs (Google Form style)
+  document.querySelectorAll('input[type="radio"]').forEach(i=> i.disabled = true);
 
+  // compute score
   let score = 0;
   questions.forEach((q,i) => {
     const sel = document.querySelector(`input[name="q${i}"]:checked`);
@@ -301,13 +328,15 @@ submitBtn.addEventListener('click', () => {
   });
 
   resultDiv.textContent = `Score: ${score} / ${questions.length}`;
+  // hide answersDiv until requested
   answersDiv.style.display = 'none';
   answersDiv.innerHTML = '';
 });
 
 showKeyBtn.addEventListener('click', () => {
+  // show full answer key
   let html = '<h3>Answer Key</h3>';
-  html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">';
+  html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">';
   questions.forEach((q,i) => {
     const letter = String.fromCharCode(65+q.correct);
     html += `<div><strong>${i+1}.</strong> ${letter}. ${q.choices[q.correct]}</div>`;
@@ -315,7 +344,7 @@ showKeyBtn.addEventListener('click', () => {
   html += '</div>';
   answersDiv.innerHTML = html;
   answersDiv.style.display = 'block';
-
+  // keep inputs disabled
   document.querySelectorAll('input[type="radio"]').forEach(i=> i.disabled = true);
 });
 </script>
