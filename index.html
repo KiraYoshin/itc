@@ -49,247 +49,247 @@
 <script>
 // ===== QUESTIONS: 100 items =====
 const questions = [
-{q:"Which is the best definition of a computer?", choices:["A programmable electronic device that processes data into information","A device that only stores files","A language for programming","A social media platform"], correct:0},
+{q: 'Which is the best definition of a computer?', choices: ['A programmable electronic device that processes data into information','A device that only stores files','A language for programming','A social media platform'], correct:0},
 
-{q:"DATA is:", choices:["Raw, unprocessed facts","Processed and meaningful information","Only numbers","A storage medium"], correct:0},
+{q: 'DATA is:', choices: ['Raw, unprocessed facts','Processed and meaningful information','Only numbers','A storage medium'], correct:0},
 
-{q:"INFORMATION is:", choices:["Processed data presented usefully","Unprocessed raw facts","A type of memory","Only images"], correct:0},
+{q: 'INFORMATION is:', choices: ['Processed data presented usefully','Unprocessed raw facts','A type of memory','Only images'], correct:0},
 
-{q:"Which is NOT part of the Information Processing System (IPS)?", choices:["Peopleware","Hardware","Paintware","Software"], correct:2},
+{q: 'Which is NOT part of the Information Processing System (IPS)?', choices: ['Peopleware','Hardware','Paintware','Software'], correct:2},
 
-{q:"Which is an example of hardware?", choices:["CPU","Operating system","Spreadsheet application","Natural language"], correct:0},
+{q: 'Which is an example of hardware?', choices: ['CPU','Operating system','Spreadsheet application','Natural language'], correct:0},
 
-{q:"Which is an example of software?", choices:["Web browser","Keyboard","Monitor","Mouse"], correct:0},
+{q: 'Which is an example of software?', choices: ['Web browser','Keyboard','Monitor','Mouse'], correct:0},
 
-{q:"Peopleware refers to:", choices:["Users, developers, and operators","A software license","A database","A hardware manual"], correct:0},
+{q: 'Peopleware refers to:', choices: ['Users, developers, and operators','A software license','A database','A hardware manual'], correct:0},
 
-{q:"Which is the correct IPS cycle order?", choices:["Input → Process → Output → Storage","Output → Input → Storage → Process","Storage → Input → Output → Process","Process → Output → Input → Storage"], correct:0},
+{q: 'Which is the correct IPS cycle order?', choices: ['Input → Process → Output → Storage','Output → Input → Storage → Process','Storage → Input → Output → Process','Process → Output → Input → Storage'], correct:0},
 
-{q:"Which is an input device?", choices:["Keyboard","Printer","Monitor","Speaker"], correct:0},
+{q: 'Which is an input device?', choices: ['Keyboard','Printer','Monitor','Speaker'], correct:0},
 
-{q:"Which is an output device?", choices:["Printer","Mouse","Scanner","Microphone"], correct:0},
+{q: 'Which is an output device?', choices: ['Printer','Mouse','Scanner','Microphone'], correct:0},
 
-{q:"Which is volatile memory?", choices:["RAM","HDD","SSD","Flash drive"], correct:0},
+{q: 'Which is volatile memory?', choices: ['RAM','HDD','SSD','Flash drive'], correct:0},
 
-{q:"Which is persistent storage?", choices:["HDD","RAM","CPU cache","Registers"], correct:0},
+{q: 'Which is persistent storage?', choices: ['HDD','RAM','CPU cache','Registers'], correct:0},
 
-{q:"An algorithm is:", choices:["A step-by-step procedure to solve a problem","A storage device","A webpage","A network protocol"], correct:0},
+{q: 'An algorithm is:', choices: ['A step-by-step procedure to solve a problem','A storage device','A webpage','A network protocol'], correct:0},
 
-{q:"Which is a characteristic of a good algorithm?", choices:["Correctness, clarity, efficiency","Lengthy comments only","Large memory use","Random steps"], correct:0},
+{q: 'Which is a characteristic of a good algorithm?', choices: ['Correctness, clarity, efficiency','Lengthy comments only','Large memory use','Random steps'], correct:0},
 
-{q:"Stepwise refinement is:", choices:["Breaking an algorithm into smaller detailed steps","Merging unrelated tasks","Skipping testing","Only writing code"], correct:0},
+{q: 'Stepwise refinement is:', choices: ['Breaking an algorithm into smaller detailed steps','Merging unrelated tasks','Skipping testing','Only writing code'], correct:0},
 
-{q:"Which is a valid form to express an algorithm?", choices:["Pseudocode and flowchart","Only binary code","Only compiled code","Only HTML"], correct:0},
+{q: 'Which is a valid form to express an algorithm?', choices: ['Pseudocode and flowchart','Only binary code','Only compiled code','Only HTML'], correct:0},
 
-{q:"Pseudocode is best described as:", choices:["Human-readable algorithm-like steps","Executable machine code","A compiled program","A CSS file"], correct:0},
+{q: 'Pseudocode is best described as:', choices: ['Human-readable algorithm-like steps','Executable machine code','A compiled program','A CSS file'], correct:0},
 
-{q:"Flowchart's diamond shape means:", choices:["Decision or branching","Start/Stop","Process","Input/Output"], correct:0},
+{q: "Flowchart's diamond shape means:", choices: ['Decision or branching','Start/Stop','Process','Input/Output'], correct:0},
 
-{q:"Flowchart rectangle stands for:", choices:["Process or operation","Decision","Connector","Input/Output"], correct:0},
+{q: 'Flowchart rectangle stands for:', choices: ['Process or operation','Decision','Connector','Input/Output'], correct:0},
 
-{q:"Flowchart parallelogram is used for:", choices:["Input/Output","Process","Decision","Start/Stop"], correct:0},
+{q: 'Flowchart parallelogram is used for:', choices: ['Input/Output','Process','Decision','Start/Stop'], correct:0},
 
-{q:"Which SDLC phase gathers user requirements?", choices:["Requirement analysis","Testing","Maintenance","Implementation"], correct:0},
+{q: 'Which SDLC phase gathers user requirements?', choices: ['Requirement analysis','Testing','Maintenance','Implementation'], correct:0},
 
-{q:"Which SDLC phase designs system architecture?", choices:["Design","Coding","Deployment","Evaluation"], correct:0},
+{q: 'Which SDLC phase designs system architecture?', choices: ['Design','Coding','Deployment','Evaluation'], correct:0},
 
-{q:"Which SDLC phase writes source code?", choices:["Implementation/Coding","Requirement analysis","Maintenance","Design"], correct:0},
+{q: 'Which SDLC phase writes source code?', choices: ['Implementation/Coding','Requirement analysis','Maintenance','Design'], correct:0},
 
-{q:"Which SDLC phase finds and fixes defects?", choices:["Testing and Debugging","Deployment","Requirement Gathering","Design"], correct:0},
+{q: 'Which SDLC phase finds and fixes defects?', choices: ['Testing and Debugging','Deployment','Requirement Gathering','Design'], correct:0},
 
-{q:"Maintenance phase includes:", choices:["Bug fixes and enhancements after deployment","Initial coding only","Only UI design","Only requirement docs"], correct:0},
+{q: 'Maintenance phase includes:', choices: ['Bug fixes and enhancements after deployment','Initial coding only','Only UI design','Only requirement docs'], correct:0},
 
-{q:"What is the primary purpose of testing?", choices:["Find defects and validate behavior","Design the UI","Purchase hardware","Write documentation"], correct:0},
+{q: 'What is the primary purpose of testing?', choices: ['Find defects and validate behavior','Design the UI','Purchase hardware','Write documentation'], correct:0},
 
-{q:"Which describes a variable?", choices:["A named location in memory that stores data","A fixed constant value","A type of compiler","A network device"], correct:0},
+{q: 'Which describes a variable?', choices: ['A named location in memory that stores data','A fixed constant value','A type of compiler','A network device'], correct:0},
 
-{q:"A constant is:", choices:["A value that does not change during program execution","A changing variable","A type of loop","A compiler flag"], correct:0},
+{q: 'A constant is:', choices: ['A value that does not change during program execution','A changing variable','A type of loop','A compiler flag'], correct:0},
 
-{q:"Which symbol starts a single-line comment in C++?", choices:["//","/*","<!--","#"], correct:0},
+{q: 'Which symbol starts a single-line comment in C++?', choices: ['//','/*','<!--','#'], correct:0},
 
-{q:"Which starts a multi-line comment in C++?", choices:["/*","//","<!--","##"], correct:0},
+{q: 'Which starts a multi-line comment in C++?', choices: ['/*','//','<!--','##'], correct:0},
 
-{q:"Which header contains cout in C++?", choices:["<iostream>","<stdio.h>","<string>","<math.h>"], correct:0},
+{q: 'Which header contains cout in C++?', choices: ['<iostream>','<stdio.h>','<string>','<math.h>'], correct:0},
 
-{q:"cout is used to:", choices:["Display output to console","Read input","Allocate memory","Sort arrays"], correct:0},
+{q: 'cout is used to:', choices: ['Display output to console','Read input','Allocate memory','Sort arrays'], correct:0},
 
-{q:"cin is used to:", choices:["Read input from console","Print to file","Declare variables","Create loops"], correct:0},
+{q: 'cin is used to:', choices: ['Read input from console','Print to file','Declare variables','Create loops'], correct:0},
 
-{q:"Which operator is used with cout to output text?", choices:["<<",">>",":=",":"]; ,}, correct:0},
+{q: 'Which operator is used with cout to output text?', choices: ['<<','>>',':=',':'], correct:0},
 
-{q:"Which operator is used with cin to read input?", choices:[">>","<<","--","++"], correct:0},
+{q: 'Which operator is used with cin to read input?', choices: ['>>','<<','--','++'], correct:0},
 
-{q:"Which character ends a C++ statement?", choices:[";","{","}","#"], correct:0},
+{q: 'Which character ends a C++ statement?', choices: [';','{','}','#'], correct:0},
 
-{q:"int data type stores:", choices:["Whole numbers (integers)","Text strings","Boolean values only","Floating point numbers"], correct:0},
+{q: 'int data type stores:', choices: ['Whole numbers (integers)','Text strings','Boolean values only','Floating point numbers'], correct:0},
 
-{q:"float stores:", choices:["Decimal numbers","Characters","Booleans","Arrays"], correct:0},
+{q: 'float stores:', choices: ['Decimal numbers','Characters','Booleans','Arrays'], correct:0},
 
-{q:"char stores:", choices:["A single character","Multiple words","A boolean","A file"], correct:0},
+{q: 'char stores:', choices: ['A single character','Multiple words','A boolean','A file'], correct:0},
 
-{q:"bool type stores:", choices:["true or false","Strings only","Integers only","Files"], correct:0},
+{q: 'bool type stores:', choices: ['true or false','Strings only','Integers only','Files'], correct:0},
 
-{q:"Which is a correct array declaration for 5 ints in C++?", choices:["int arr[5];","int arr();","array int[5];","int[5] arr;"], correct:0},
+{q: 'Which is a correct array declaration for 5 ints in C++?', choices: ['int arr[5];','int arr();','array int[5];','int[5] arr;'], correct:0},
 
-{q:"Array indexing in C++ starts at:", choices:["0","1","-1","Any value"], correct:0},
+{q: 'Array indexing in C++ starts at:', choices: ['0','1','-1','Any value'], correct:0},
 
-{q:"Which is an example of a 2D array declaration?", choices:["int a[3][4];","int a(3,4);","array a[3,4];","int a[3];"], correct:0},
+{q: 'Which is an example of a 2D array declaration?', choices: ['int a[3][4];','int a(3,4);','array a[3,4];','int a[3];'], correct:0},
 
-{q:"Which control structure executes statements in sequence?", choices:["Sequential","Selection","Iteration","Recursion"], correct:0},
+{q: 'Which control structure executes statements in sequence?', choices: ['Sequential','Selection','Iteration','Recursion'], correct:0},
 
-{q:"If statement is used for:", choices:["Decision-making (branching)","Looping","Function declaration","Memory allocation"], correct:0},
+{q: 'If statement is used for:', choices: ['Decision-making (branching)','Looping','Function declaration','Memory allocation'], correct:0},
 
-{q:"If/else allows:", choices:["Different actions when condition true or false","Only true branch","Only false branch","No branching"], correct:0},
+{q: 'If/else allows:', choices: ['Different actions when condition true or false','Only true branch','Only false branch','No branching'], correct:0},
 
-{q:"switch statement is best used when:", choices:["Multiple discrete values of a variable are tested","You need mathematical integration","Formatting text","Networking"], correct:0},
+{q: 'switch statement is best used when:', choices: ['Multiple discrete values of a variable are tested','You need mathematical integration','Formatting text','Networking'], correct:0},
 
-{q:"while loop checks condition when?", choices:["Before each iteration (pre-test)","After each iteration (post-test)","Only once at start","Never"], correct:0},
+{q: 'while loop checks condition when?', choices: ['Before each iteration (pre-test)','After each iteration (post-test)','Only once at start','Never'], correct:0},
 
-{q:"do-while loop checks condition when?", choices:["After body executes (post-test)","Before body executes","At compile time","Only on error"], correct:0},
+{q: 'do-while loop checks condition when?', choices: ['After body executes (post-test)','Before body executes','At compile time','Only on error'], correct:0},
 
-{q:"for loop is ideal for:", choices:["Known number of iterations","Unknown repetitions","Only infinite loops","Only recursion"], correct:0},
+{q: 'for loop is ideal for:', choices: ['Known number of iterations','Unknown repetitions','Only infinite loops','Only recursion'], correct:0},
 
-{q:"break inside a loop does:", choices:["Exit the loop immediately","Skip to next iteration","Restart program","Close file"], correct:0},
+{q: 'break inside a loop does:', choices: ['Exit the loop immediately','Skip to next iteration','Restart program','Close file'], correct:0},
 
-{q:"continue inside a loop does:", choices:["Skip remaining statements in current iteration","Exit program","Delete array","Pause loop"], correct:0},
+{q: 'continue inside a loop does:', choices: ['Skip remaining statements in current iteration','Exit program','Delete array','Pause loop'], correct:0},
 
-{q:"What is recursion?", choices:["Function calling itself","Loop within a loop","A variable type","An operator"], correct:0},
+{q: 'What is recursion?', choices: ['Function calling itself','Loop within a loop','A variable type','An operator'], correct:0},
 
-{q:"Base case in recursion ensures:", choices:["Termination of recursion","Infinite recursion","Automatic memory free","Faster compilation"], correct:0},
+{q: 'Base case in recursion ensures:', choices: ['Termination of recursion','Infinite recursion','Automatic memory free','Faster compilation'], correct:0},
 
-{q:"Which is used for dynamic memory allocation in C++?", choices:["new and delete","malloc and free (C style)","alloc only","static only"], correct:0},
+{q: 'Which is used for dynamic memory allocation in C++?', choices: ['new and delete','malloc and free (C style)','alloc only','static only'], correct:0},
 
-{q:"Pointer stores:", choices:["Memory address","File name","String content","Boolean value"], correct:0},
+{q: 'Pointer stores:', choices: ['Memory address','File name','String content','Boolean value'], correct:0},
 
-{q:"Dereference operator for pointer is:", choices:["*","&","->","::"], correct:0},
+{q: 'Dereference operator for pointer is:', choices: ['*','&','->','::'], correct:0},
 
-{q:"Address-of operator is:", choices:["&","*","%","$"], correct:0},
+{q: 'Address-of operator is:', choices: ['&','*','%','$'], correct:0},
 
-{q:"Which best describes pseudo code?", choices:["An informal, language-agnostic description of algorithm steps","Executable binary code","A CSS stylesheet","A network packet"], correct:0},
+{q: 'Which best describes pseudo code?', choices: ['An informal, language-agnostic description of algorithm steps','Executable binary code','A CSS stylesheet','A network packet'], correct:0},
 
-{q:"Which flowchart symbol denotes start/end?", choices:["Oval/Terminator","Diamond","Rectangle","Parallelogram"], correct:0},
+{q: 'Which flowchart symbol denotes start/end?', choices: ['Oval/Terminator','Diamond','Rectangle','Parallelogram'], correct:0},
 
-{q:"Which flowchart symbol denotes input/output?", choices:["Parallelogram","Diamond","Rectangle","Oval"], correct:0},
+{q: 'Which flowchart symbol denotes input/output?', choices: ['Parallelogram','Diamond','Rectangle','Oval'], correct:0},
 
-{q:"Which flowchart symbol denotes process or operation?", choices:["Rectangle","Diamond","Oval","Parallelogram"], correct:0},
+{q: 'Which flowchart symbol denotes process or operation?', choices: ['Rectangle','Diamond','Oval','Parallelogram'], correct:0},
 
-{q:"Which describes a good test case?", choices:["Clear, reproducible, with expected result","Ambiguous and long","Only used in production","Only for developers"], correct:0},
+{q: 'Which describes a good test case?', choices: ['Clear, reproducible, with expected result','Ambiguous and long','Only used in production','Only for developers'], correct:0},
 
-{q:"Unit testing focuses on:", choices:["Single modules or functions","Entire system only","Deployment pipeline","Hardware testing"], correct:0},
+{q: 'Unit testing focuses on:', choices: ['Single modules or functions','Entire system only','Deployment pipeline','Hardware testing'], correct:0},
 
-{q:"Integration testing checks:", choices:["Interaction between modules","Only database","Only UI","Only network"], correct:0},
+{q: 'Integration testing checks:', choices: ['Interaction between modules','Only database','Only UI','Only network'], correct:0},
 
-{q:"Which is a primary goal of SDLC requirement analysis?", choices:["Understand what the user needs and restrictions","Write code immediately","Buy hardware","Hire staff"], correct:0},
+{q: 'Which is a primary goal of SDLC requirement analysis?', choices: ['Understand what the user needs and restrictions','Write code immediately','Buy hardware','Hire staff'], correct:0},
 
-{q:"Which is a deliverable from design phase?", choices:["System architecture and design documents","Compiled binaries","Helpdesk tickets","Marketing materials"], correct:0},
+{q: 'Which is a deliverable from design phase?', choices: ['System architecture and design documents','Compiled binaries','Helpdesk tickets','Marketing materials'], correct:0},
 
-{q:"Which is true about maintenance phase?", choices:["It includes bug fixing and enhancements after deployment","It ends development forever","It deletes user data","It stops testing"], correct:0},
+{q: 'Which is true about maintenance phase?', choices: ['It includes bug fixing and enhancements after deployment','It ends development forever','It deletes user data','It stops testing'], correct:0},
 
-{q:"Which is true about source code control (version control)?", choices:["Tracks changes, enables collaboration and history","Automatically writes requirements","Compiles code","Runs tests"], correct:0},
+{q: 'Which is true about source code control (version control)?', choices: ['Tracks changes, enables collaboration and history','Automatically writes requirements','Compiles code','Runs tests'], correct:0},
 
-{q:"Which command creates a local Git repository?", choices:["git init","git start","git create","git new"], correct:0},
+{q: 'Which command creates a local Git repository?', choices: ['git init','git start','git create','git new'], correct:0},
 
-{q:"Which is the purpose of 'git commit'?", choices:["Record staged changes in local repository","Upload to remote","Remove files","Initialize repo"], correct:0},
+{q: 'Which is the purpose of git commit?', choices: ['Record staged changes in local repository','Upload to remote','Remove files','Initialize repo'], correct:0},
 
-{q:"Which HTML tag defines a hyperlink?", choices:["<a>","<link>","<href>","<nav>"], correct:0},
+{q: 'Which HTML tag defines a hyperlink?', choices: ['<a>','<link>','<href>','<nav>'], correct:0},
 
-{q:"Which attribute is used to specify link target URL?", choices:["href","src","alt","id"], correct:0},
+{q: 'Which attribute is used to specify link target URL?', choices: ['href','src','alt','id'], correct:0},
 
-{q:"Which tag is used for an image?", choices:["<img>","<image>","<picture>","<photo>"], correct:0},
+{q: 'Which tag is used for an image?', choices: ['<img>','<image>','<picture>','<photo>'], correct:0},
 
-{q:"Which attribute provides alternate text for an image?", choices:["alt","title","src","id"], correct:0},
+{q: 'Which attribute provides alternate text for an image?', choices: ['alt','title','src','id'], correct:0},
 
-{q:"Which tag is for an unordered list?", choices:["<ul>","<ol>","<li>","<dl>"], correct:0},
+{q: 'Which tag is for an unordered list?', choices: ['<ul>','<ol>','<li>','<dl>'], correct:0},
 
-{q:"Which tag is for an ordered (numbered) list?", choices:["<ol>","<ul>","<li>","<dl>"], correct:0},
+{q: 'Which tag is for an ordered (numbered) list?', choices: ['<ol>','<ul>','<li>','<dl>'], correct:0},
 
-{q:"Which HTML element is semantic for main content?", choices:["<main>","<div>","<span>","<section>"], correct:0},
+{q: 'Which HTML element is semantic for main content?', choices: ['<main>','<div>','<span>','<section>'], correct:0},
 
-{q:"Which tag defines a table row?", choices:["<tr>","<td>","<th>","<table>"], correct:0},
+{q: 'Which tag defines a table row?', choices: ['<tr>','<td>','<th>','<table>'], correct:0},
 
-{q:"Which tag defines a table cell?", choices:["<td>","<tr>","<th>","<table>"], correct:0},
+{q: 'Which tag defines a table cell?', choices: ['<td>','<tr>','<th>','<table>'], correct:0},
 
-{q:"Which CSS property sets text color?", choices:["color","background","font-size","display"], correct:0},
+{q: 'Which CSS property sets text color?', choices: ['color','background','font-size','display'], correct:0},
 
-{q:"Which CSS property sets font size?", choices:["font-size","text-size","size","font-weight"], correct:0},
+{q: 'Which CSS property sets font size?', choices: ['font-size','text-size','size','font-weight'], correct:0},
 
-{q:"Which CSS selector targets an element with id 'myId'?", choices:["#myId",".myId","myId","*myId"], correct:0},
+{q: 'Which CSS selector targets an element with id myId?', choices: ['#myId','.myId','myId','*myId'], correct:0},
 
-{q:"Which selector targets elements with class 'item'?", choices:[".item","#item","item","*item"], correct:0},
+{q: 'Which selector targets elements with class item?', choices: ['.item','#item','item','*item'], correct:0},
 
-{q:"Which is an inline CSS example?", choices:["<p style=\"color:red\">Text</p>","<p class=\"red\">Text</p>","<p id=\"red\">Text</p>","<p>Text</p>"], correct:0},
+{q: 'Which is an inline CSS example?', choices: ['<p style=\"color:red\">Text</p>','<p class=\"red\">Text</p>','<p id=\"red\">Text</p>','<p>Text</p>'], correct:0},
 
-{q:"What does JS console.log() do?", choices:["Prints message to developer console","Shows alert to user","Writes to file","Compiles code"], correct:0},
+{q: 'What does JS console.log() do?', choices: ['Prints message to developer console','Shows alert to user','Writes to file','Compiles code'], correct:0},
 
-{q:"Which method selects element by id in JS?", choices:["document.getElementById('id')","getElement('id')","query('#id')","select('id')"], correct:0},
+{q: 'Which method selects element by id in JS?', choices: ['document.getElementById(\"id\")','getElement(\"id\")','query(\"#id\")','select(\"id\")'], correct:0},
 
-{q:"Which event runs when page fully loads?", choices:["window.onload","onclick","onhover","onchange"], correct:0},
+{q: 'Which event runs when page fully loads?', choices: ['window.onload','onclick','onhover','onchange'], correct:0},
 
-{q:"Which operator compares equality of values in C++?", choices:["==","=","===","!="], correct:0},
+{q: 'Which operator compares equality of values in C++?', choices: ['==','=','===','!='], correct:0},
 
-{q:"Which operator assigns a value in C++?", choices:["=","==","=>","::"], correct:0},
+{q: 'Which operator assigns a value in C++?', choices: ['=','==','=>','::'], correct:0},
 
-{q:"Which logical operator is AND in C++?", choices:["&&","||","!","&"], correct:0},
+{q: 'Which logical operator is AND in C++?', choices: ['&&','||','!','&'], correct:0},
 
-{q:"Which logical operator is OR in C++?", choices:["||","&&","!","|"], correct:0},
+{q: 'Which logical operator is OR in C++?', choices: ['||','&&','!','|'], correct:0},
 
-{q:"Which logical operator is NOT in C++?", choices:["!","~","&&","||"], correct:0},
+{q: 'Which logical operator is NOT in C++?', choices: ['!','~','&&','||'], correct:0},
 
-{q:"Short-circuit evaluation stops evaluating when:", choices:["Result determined by first operand","Always evaluate both","Never stops early","Only in loops"], correct:0},
+{q: 'Short-circuit evaluation stops evaluating when:', choices: ['Result determined by first operand','Always evaluate both','Never stops early','Only in loops'], correct:0},
 
-{q:"Which is an off-by-one risk area?", choices:["Array indexing and loop boundaries","CSS selectors","Image alt text","Database backups"], correct:0},
+{q: 'Which is an off-by-one risk area?', choices: ['Array indexing and loop boundaries','CSS selectors','Image alt text','Database backups'], correct:0},
 
-{q:"Which is true about zero in conditional expressions (C/C++)?", choices:["Zero is false, non-zero is true","Zero is true","Zero undefined","Zero is an exception"], correct:0},
+{q: 'Which is true about zero in conditional expressions (C/C++)?', choices: ['Zero is false, non-zero is true','Zero is true','Zero undefined','Zero is an exception'], correct:0},
 
-{q:"Which is the best way to prevent SQL injection?", choices:["Use parameterized queries / prepared statements","Concatenate user input into SQL","Trust user input","Skip validation"], correct:0},
+{q: 'Which is the best way to prevent SQL injection?', choices: ['Use parameterized queries / prepared statements','Concatenate user input into SQL','Trust user input','Skip validation'], correct:0},
 
-{q:"Which is a common web security practice?", choices:["Use HTTPS and strong input validation","Send passwords in plain text","Use weak hashing","Expose debug info"], correct:0},
+{q: 'Which is a common web security practice?', choices: ['Use HTTPS and strong input validation','Send passwords in plain text','Use weak hashing','Expose debug info'], correct:0},
 
-{q:"Which tag groups form controls visually?", choices:["<fieldset>","<form>","<div>","<label>"], correct:0},
+{q: 'Which tag groups form controls visually?', choices: ['<fieldset>','<form>','<div>','<label>'], correct:0},
 
-{q:"Which input element allows multiline text?", choices:["<textarea>","<input type='text'>","<select>","<button>"], correct:0},
+{q: 'Which input element allows multiline text?', choices: ['<textarea>','<input type=\"text\">','<select>','<button>'], correct:0},
 
-{q:"Which HTML attribute associates a label with an input?", choices:["for","id","class","name"], correct:0},
+{q: 'Which HTML attribute associates a label with an input?', choices: ['for','id','class','name'], correct:0},
 
-{q:"Which CSS property controls layout in modern CSS (two-dimensional)?", choices:["grid","float","position","display:none"], correct:0},
+{q: 'Which CSS property controls layout in modern CSS (two-dimensional)?', choices: ['grid','float','position','display:none'], correct:0},
 
-{q:"Which layout model is for one-dimensional layout?", choices:["flexbox","grid","table","float"], correct:0},
+{q: 'Which layout model is for one-dimensional layout?', choices: ['flexbox','grid','table','float'], correct:0},
 
-{q:"Which HTTP method should be used to request data without side-effects?", choices:["GET","POST","PUT","DELETE"], correct:0},
+{q: 'Which HTTP method should be used to request data without side-effects?', choices: ['GET','POST','PUT','DELETE'], correct:0},
 
-{q:"Which HTTP method is used to submit data to be processed to the server?", choices:["POST","GET","HEAD","OPTIONS"], correct:0},
+{q: 'Which HTTP method is used to submit data to be processed to the server?', choices: ['POST','GET','HEAD','OPTIONS'], correct:0},
 
-{q:"Which is responsible for translating a domain name to an IP address?", choices:["DNS","DHCP","FTP","SMTP"], correct:0},
+{q: 'Which is responsible for translating a domain name to an IP address?', choices: ['DNS','DHCP','FTP','SMTP'], correct:0},
 
-{q:"Which is an example of a good password practice?", choices:["Use long unique passphrases and enable 2FA","Use same password everywhere","Write password on a sticky note","Use 'password'"], correct:0},
+{q: 'Which is an example of a good password practice?', choices: ['Use long unique passphrases and enable 2FA','Use same password everywhere','Write password on a sticky note','Use \"password\"'], correct:0},
 
-{q:"Which is the meaning of 'backup'?", choices:["Copy of data kept for recovery","Faster SSD","Permanent delete","Database index"], correct:0},
+{q: 'Which is the meaning of backup?', choices: ['Copy of data kept for recovery','Faster SSD','Permanent delete','Database index'], correct:0},
 
-{q:"Which best describes 'open source' software?", choices:["Source code is publicly available and reusable under license","Always paid software only","Hardware product","Proprietary only"], correct:0},
+{q: 'Which best describes open source software?', choices: ['Source code is publicly available and reusable under license','Always paid software only','Hardware product','Proprietary only'], correct:0},
 
-{q:"Which is the best reason to modularize code?", choices:["Easier testing, reuse, and maintenance","Make code longer","Increase coupling","Hide requirements"], correct:0},
+{q: 'Which is the best reason to modularize code?', choices: ['Easier testing, reuse, and maintenance','Make code longer','Increase coupling','Hide requirements'], correct:0},
 
-{q:"Which sorting algorithm is divide-and-conquer and efficient O(n log n)?", choices:["Merge sort","Bubble sort","Selection sort","Insertion sort"], correct:0},
+{q: 'Which sorting algorithm is divide-and-conquer and efficient O(n log n)?', choices: ['Merge sort','Bubble sort','Selection sort','Insertion sort'], correct:0},
 
-{q:"Binary search works on:", choices:["Sorted arrays/lists","Unsorted lists","Graphs only","Images only"], correct:0},
+{q: 'Binary search works on:', choices: ['Sorted arrays/lists','Unsorted lists','Graphs only','Images only'], correct:0},
 
-{q:"Which is a typical unit of digital storage equal to 1024 bytes (approx)?", choices:["Kilobyte (technically kibibyte)","Megabyte","Gigabyte","Terabyte"], correct:0},
+{q: 'Which is a typical unit of digital storage equal to 1024 bytes (approx)?', choices: ['Kilobyte (technically kibibyte)','Megabyte','Gigabyte','Terabyte'], correct:0},
 
-{q:"Which HTML5 element is used for defining navigation links?", choices:["<nav>","<header>","<aside>","<footer>"], correct:0},
+{q: 'Which HTML5 element is used for defining navigation links?', choices: ['<nav>','<header>','<aside>','<footer>'], correct:0},
 
-{q:"Which HTML attribute makes a link open in a new tab?", choices:["target=\"_blank\"","open=\"new\"","rel=\"noopener\"","href=\"new\""], correct:0},
+{q: 'Which HTML attribute makes a link open in a new tab?', choices: ['target=\"_blank\"','open=\"new\"','rel=\"noopener\"','href=\"new\"'], correct:0},
 
-{q:"Which is the correct way to include external CSS file?", choices:["<link rel=\"stylesheet\" href=\"styles.css\">","<script src=\"styles.css\"></script>","<style src=\"styles.css\"></style>","<css src=\"styles.css\">"], correct:0},
+{q: 'Which is the correct way to include external CSS file?', choices: ['<link rel=\"stylesheet\" href=\"styles.css\">','<script src=\"styles.css\"></script>','<style src=\"styles.css\"></style>','<css src=\"styles.css\">'], correct:0},
 
-{q:"Which JS keyword declares a block-scoped variable?", choices:["let","var","constvar","def"], correct:0},
+{q: 'Which JS keyword declares a block-scoped variable?', choices: ['let','var','constvar','def'], correct:0},
 
-{q:"Which JS keyword declares a constant reference?", choices:["const","let","var","static"], correct:0},
+{q: 'Which JS keyword declares a constant reference?', choices: ['const','let','var','static'], correct:0},
 
-{q:"Which is true about 'HTTP 404' status?", choices:["Resource not found","OK success","Server error","Redirect"], correct:0},
+{q: 'Which is true about HTTP 404 status?', choices: ['Resource not found','OK success','Server error','Redirect'], correct:0},
 
-{q:"Which is true about 'HTTP 200' status?", choices:["Request succeeded","Resource not found","Server error","Unauthorized"], correct:0},
+{q: 'Which is true about HTTP 200 status?', choices: ['Request succeeded','Resource not found','Server error','Unauthorized'], correct:0},
 
-{q:"Which is a best practice for accessibility in HTML?", choices:["Provide alt attributes for images and use semantic tags","Only use images without text","Use tiny fonts","Avoid labels"], correct:0}
+{q: 'Which is a best practice for accessibility in HTML?', choices: ['Provide alt attributes for images and use semantic tags','Only use images without text','Use tiny fonts','Avoid labels'], correct:0}
 ];
 
 // ===== BUILD QUIZ =====
@@ -300,8 +300,8 @@ questions.forEach((item, idx) => {
   block.className = 'q';
   let inner = `<strong>${idx+1}. ${item.q}</strong><div class="choices">`;
   item.choices.forEach((ch,i)=> {
-    // escape any quotes in ch for safety
-    const safeChoice = ch.replace(/"/g, '&quot;');
+    // escape any HTML double-quotes in shown choice text for safety
+    const safeChoice = String(ch).replace(/"/g, '&quot;');
     inner += `<label><input type="radio" name="q${idx}" value="${i}"> ${String.fromCharCode(65+i)}. ${safeChoice}</label>`;
   });
   inner += '</div>';
@@ -339,7 +339,9 @@ showKeyBtn.addEventListener('click', () => {
   html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">';
   questions.forEach((q,i) => {
     const letter = String.fromCharCode(65+q.correct);
-    html += `<div><strong>${i+1}.</strong> ${letter}. ${q.choices[q.correct]}</div>`;
+    // escape quotes for display safety
+    const safeText = String(q.choices[q.correct]).replace(/"/g, '&quot;');
+    html += `<div><strong>${i+1}.</strong> ${letter}. ${safeText}</div>`;
   });
   html += '</div>';
   answersDiv.innerHTML = html;
