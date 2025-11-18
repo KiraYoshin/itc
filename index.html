@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Comprog & ICT — 200-Item Quiz (Blue Neon)</title>
+<title>KERR ITC REVIEWER</title>
 <style>
  :root{
   --bg:#0a0f24; --card:#111827; --accent:#00eaff; --glow:0 0 14px #00dfff;
@@ -30,16 +30,16 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Comprog & ICT — 200-Item Reviewer</h1>
-    <p class="meta">Mixed topics: Computer basics, IPS, Algorithms, SDLC, Flowcharts, Pseudocode, Control structures, Loops, Arrays, HTML/CSS/JS, etc. Submit locks answers. Refresh to retake.</p>
+    <h1>ITC REVIEWER KO TO BOY?</h1>
+    <p class="meta">SUPER DAMING ITEMS BOY PALDOO</p>
 
     <form id="quiz"></form>
 
     <div class="controls">
-      <button id="submitBtn" type="button">Submit Answers</button>
-      <button id="showKeyBtn" type="button" class="secondary">Show Answer Key</button>
+      <button id="submitBtn" type="button">Submit mo na</button>
+      <button id="showKeyBtn" type="button" class="secondary">Click for magic</button>
       <div style="flex:1"></div>
-      <div class="small">Ready to copy — paste this into GitHub / VS Code.</div>
+      <div class="small">NYANYANYANYANYANYA</div>
     </div>
 
     <div id="result" aria-live="polite"></div>
@@ -47,7 +47,6 @@
   </div>
 
 <script>
-// ===== QUESTIONS: 200 items =====
 const questions = [
 {q:"Which best defines a computer?", choices:["A programmable electronic device that processes data","A storage device only","A type of printer","A smartphone exclusively"], correct:0},
 {q:"DATA is best described as:", choices:["Raw, unorganized facts","Processed information","An output report","A storage medium"], correct:0},
@@ -272,7 +271,6 @@ const questions = [
 {q:"Which is W3C?", choices:["Standards organization for web technologies","A programming language","A database","A web browser"], correct:0}
 ];
 
-// ===== BUILD QUIZ =====
 const quizEl = document.getElementById('quiz');
 
 questions.forEach((item, idx) => {
@@ -287,17 +285,14 @@ questions.forEach((item, idx) => {
   quizEl.appendChild(block);
 });
 
-// ===== SUBMIT & SHOW KEY =====
+
 const submitBtn = document.getElementById('submitBtn');
 const showKeyBtn = document.getElementById('showKeyBtn');
 const resultDiv = document.getElementById('result');
 const answersDiv = document.getElementById('answers');
 
 submitBtn.addEventListener('click', () => {
-  // disable inputs (Google Form style)
-  document.querySelectorAll('input[type="radio"]').forEach(i=> i.disabled = true);
 
-  // compute score
   let score = 0;
   questions.forEach((q,i) => {
     const sel = document.querySelector(`input[name="q${i}"]:checked`);
@@ -306,13 +301,11 @@ submitBtn.addEventListener('click', () => {
   });
 
   resultDiv.textContent = `Score: ${score} / ${questions.length}`;
-  // hide answersDiv until requested
   answersDiv.style.display = 'none';
   answersDiv.innerHTML = '';
 });
 
 showKeyBtn.addEventListener('click', () => {
-  // show full answer key
   let html = '<h3>Answer Key</h3>';
   html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">';
   questions.forEach((q,i) => {
@@ -322,7 +315,7 @@ showKeyBtn.addEventListener('click', () => {
   html += '</div>';
   answersDiv.innerHTML = html;
   answersDiv.style.display = 'block';
-  // keep inputs disabled
+
   document.querySelectorAll('input[type="radio"]').forEach(i=> i.disabled = true);
 });
 </script>
